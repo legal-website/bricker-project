@@ -90,13 +90,13 @@ export default function MySetsPage() {
           </div>
 
           <motion.button
-            className="mt-4 md:mt-0 flex items-center justify-center py-2 px-4 bg-emerald-500 text-white rounded-lg"
-            whileHover={{ scale: 1.02, backgroundColor: "#10b981" }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Plus size={18} className="mr-2" />
-            Add New Set
-          </motion.button>
+  className="mt-4 md:mt-0 flex items-center justify-center py-2 px-4 bg-emerald-500 text-white rounded-[5px]"
+  whileHover={{ scale: 1.02, backgroundColor: "#10b981" }}
+  whileTap={{ scale: 0.98 }}
+>
+  <Plus size={18} className="mr-2" />
+  Add New Set
+</motion.button>
         </div>
 
         {sets.length > 0 ? (
@@ -130,13 +130,14 @@ export default function MySetsPage() {
             icon={<Package size={48} />}
             action={
               <motion.button
-                className="flex items-center justify-center py-2 px-4 bg-emerald-500 text-white rounded-lg"
-                whileHover={{ scale: 1.02, backgroundColor: "#10b981" }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Plus size={18} className="mr-2" />
-                Add Your First Set
-              </motion.button>
+  className="flex items-center justify-center py-2 px-4 bg-emerald-500 text-white rounded-[5px]"
+  whileHover={{ scale: 1.02, backgroundColor: "#10b981" }}
+  whileTap={{ scale: 0.98 }}
+>
+  <Plus size={18} className="mr-2" />
+  Add Your First Set
+</motion.button>
+
             }
             image="/placeholder.svg?height=200&width=200"
           />
