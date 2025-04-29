@@ -113,20 +113,23 @@ export default function SetDetailModal({ isOpen, onClose, setId, data }: SetDeta
     hidden: {
       opacity: 0,
       scale: 0.9,
+      y: 20,
     },
     visible: {
       opacity: 1,
       scale: 1,
+      y: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.4,
         ease: "easeOut",
       },
     },
     exit: {
       opacity: 0,
-      scale: 0.9,
+      scale: 0.95,
+      y: -10,
       transition: {
-        duration: 0.2,
+        duration: 0.3,
         ease: "easeIn",
       },
     },
@@ -192,12 +195,7 @@ export default function SetDetailModal({ isOpen, onClose, setId, data }: SetDeta
               {/* Image and basic info */}
               <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="relative aspect-square rounded-lg overflow-hidden bg-gray-100">
-                  <Image
-                    src={mockData.image || "/placeholder.svg"}
-                    alt={mockData.name}
-                    fill
-                    className="object-contain"
-                  />
+                  <Image src={mockData.image || "/game.jpg"} alt={mockData.name} fill className="object-contain" />
                 </div>
 
                 <div className="flex flex-col justify-between">

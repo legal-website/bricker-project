@@ -18,12 +18,17 @@ export default function EmptyState({ title, message, icon, action, image }: Empt
       className="flex flex-col items-center justify-center text-center p-8 my-8 max-w-md mx-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       {image && (
-        <div className="relative w-48 h-48 mb-6">
-          <Image src={image || "/placeholder.svg"} alt={title} fill className="object-contain" />
-        </div>
+        <motion.div
+          className="relative w-48 h-48 mb-6"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          <Image src={image || "/game.jpg"} alt={title} fill className="object-contain" />
+        </motion.div>
       )}
 
       {icon && <div className="text-emerald-500 mb-4">{icon}</div>}

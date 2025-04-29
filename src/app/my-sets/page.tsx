@@ -69,10 +69,20 @@ export default function MySetsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <motion.div
+      className="min-h-screen bg-gray-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Header />
 
-      <main className="container mx-auto px-4 pt-24 pb-12">
+      <motion.main
+        className="container mx-auto px-6 md:px-8 pt-28 pb-16"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-800">My LEGO Sets</h1>
@@ -91,7 +101,7 @@ export default function MySetsPage() {
 
         {sets.length > 0 ? (
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -131,9 +141,9 @@ export default function MySetsPage() {
             image="/placeholder.svg?height=200&width=200"
           />
         )}
-      </main>
+      </motion.main>
 
       <SetDetailModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} setId={selectedSetId || undefined} />
-    </div>
+    </motion.div>
   )
 }

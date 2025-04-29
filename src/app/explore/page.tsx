@@ -13,7 +13,7 @@ const mockSets = [
   {
     id: "1",
     name: "LEGO Star Wars Imperial Star Destroyer",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 4784,
     theme: "Star Wars",
     year: 2019,
@@ -22,7 +22,7 @@ const mockSets = [
   {
     id: "2",
     name: "LEGO Ideas Tree House",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 3036,
     theme: "Ideas",
     year: 2019,
@@ -31,7 +31,7 @@ const mockSets = [
   {
     id: "3",
     name: "LEGO Creator Expert Bookshop",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 2504,
     theme: "Creator Expert",
     year: 2020,
@@ -40,7 +40,7 @@ const mockSets = [
   {
     id: "4",
     name: "LEGO Technic Bugatti Chiron",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 3599,
     theme: "Technic",
     year: 2018,
@@ -49,7 +49,7 @@ const mockSets = [
   {
     id: "5",
     name: "LEGO Harry Potter Hogwarts Castle",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 6020,
     theme: "Harry Potter",
     year: 2018,
@@ -58,7 +58,7 @@ const mockSets = [
   {
     id: "6",
     name: "LEGO Architecture Statue of Liberty",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 1685,
     theme: "Architecture",
     year: 2018,
@@ -126,10 +126,20 @@ export default function ExplorePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <motion.div
+      className="min-h-screen bg-gray-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Header />
 
-      <main className="container mx-auto px-4 pt-24 pb-12">
+      <motion.main
+        className="container mx-auto px-6 md:px-8 pt-28 pb-16"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-800">Explore LEGO Sets</h1>
           <p className="text-gray-600 mt-1">Discover sets you can build with your current collection</p>
@@ -265,7 +275,7 @@ export default function ExplorePage() {
             </div>
 
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -299,9 +309,9 @@ export default function ExplorePage() {
             )}
           </>
         )}
-      </main>
+      </motion.main>
 
       <SetDetailModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} setId={selectedSetId || undefined} />
-    </div>
+    </motion.div>
   )
 }

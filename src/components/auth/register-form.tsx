@@ -43,19 +43,20 @@ export default function RegisterForm() {
       >
         <div className="max-w-md mx-auto">
           {/* Logo */}
-          <motion.div className="flex justify-center mb-6" variants={itemVariants}>
-            <div className="h-12 w-12 bg-gradient-to-r from-emerald-400 to-green-500 rounded-md flex items-center justify-center">
-              <div className="relative w-8 h-8">
-                <Image src="/logo.webp" alt="Logo" fill className="object-contain" />
-              </div>
+          <motion.div className="flex justify-center mb-8" variants={itemVariants}>
+            <div className="relative h-20 w-20">
+              <Image src="/logo.webp" alt="Bricker" fill className="object-contain" priority />
             </div>
           </motion.div>
 
-          <motion.h2 className="text-4xl font-bold text-center text-gray-800 mb-8" variants={itemVariants}>
+          <motion.h2
+            className="text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-6 md:mb-8"
+            variants={itemVariants}
+          >
             CREATE ACCOUNT
           </motion.h2>
 
-          <form className="space-y-5">
+          <form className="space-y-4 md:space-y-5 w-full max-w-sm mx-auto">
             {/* Name field */}
             <motion.div className="space-y-2" variants={itemVariants}>
               <div className="relative">
@@ -227,13 +228,13 @@ export default function RegisterForm() {
 
         {/* Vector illustration */}
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%]"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          className="absolute inset-0 flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative w-full aspect-square">
-            <Image src="/register.jpg" alt="Register Illustration" fill className="object-contain" priority />
+          <div className="relative w-full h-full">
+            <Image src="/register.png" alt="Register Illustration" fill className="object-cover" priority />
           </div>
         </motion.div>
 

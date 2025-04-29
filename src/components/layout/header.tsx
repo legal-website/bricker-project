@@ -54,27 +54,21 @@ export default function Header() {
   ]
 
   return (
-    <header
+    <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "bg-white shadow-md py-2" : "bg-white/80 backdrop-blur-sm py-4"
       }`}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/my-sets" className="flex items-center">
-            <motion.div
-              className="h-10 w-10 bg-gradient-to-r from-emerald-400 to-green-500 rounded-md flex items-center justify-center mr-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <div className="relative w-7 h-7">
-                <Image src="/logo.webp" alt="Bricker Logo" fill className="object-contain" />
-              </div>
-            </motion.div>
-            <span className="text-xl font-bold bg-gradient-to-r from-emerald-500 to-green-600 bg-clip-text text-transparent">
-              Bricker
-            </span>
+            <div className="relative h-12 w-12 md:h-16 md:w-16">
+              <Image src="/logo.webp" alt="Bricker" fill className="object-contain" priority />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -165,6 +159,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </motion.header>
   )
 }

@@ -8,7 +8,12 @@ interface LoadingStateProps {
 
 export default function LoadingState({ message = "Loading..." }: LoadingStateProps) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[200px] p-8">
+    <motion.div
+      className="flex flex-col items-center justify-center min-h-[200px] p-8"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="relative w-16 h-16 mb-4">
         {/* LEGO brick animation */}
         <motion.div
@@ -17,10 +22,12 @@ export default function LoadingState({ message = "Loading..." }: LoadingStatePro
             rotate: [0, 90, 180, 270, 360],
             x: [0, 10, 0, -10, 0],
             y: [0, -10, 0, 10, 0],
+            scale: [1, 1.1, 1, 0.9, 1],
           }}
           transition={{
             duration: 2,
             repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
             ease: "easeInOut",
           }}
         />
@@ -75,6 +82,6 @@ export default function LoadingState({ message = "Loading..." }: LoadingStatePro
       >
         {message}
       </motion.p>
-    </div>
+    </motion.div>
   )
 }

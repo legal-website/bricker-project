@@ -49,7 +49,7 @@ export default function SetCard({
       {/* Image container */}
       <div className="relative aspect-square overflow-hidden">
         <Image
-          src={image || "/placeholder.svg"}
+          src={image || "/game.jpg"}
           alt={name}
           fill
           className="object-cover transition-transform duration-300"
