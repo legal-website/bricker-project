@@ -13,7 +13,7 @@ const mockSets = [
   {
     id: "1",
     name: "LEGO Star Wars Imperial Star Destroyer",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 4784,
     theme: "Star Wars",
     year: 2019,
@@ -21,7 +21,7 @@ const mockSets = [
   {
     id: "2",
     name: "LEGO Ideas Tree House",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 3036,
     theme: "Ideas",
     year: 2019,
@@ -29,7 +29,7 @@ const mockSets = [
   {
     id: "3",
     name: "LEGO Creator Expert Bookshop",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 2504,
     theme: "Creator Expert",
     year: 2020,
@@ -37,7 +37,7 @@ const mockSets = [
   {
     id: "4",
     name: "LEGO Technic Bugatti Chiron",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/game.jpg",
     pieces: 3599,
     theme: "Technic",
     year: 2018,

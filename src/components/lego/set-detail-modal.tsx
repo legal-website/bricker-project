@@ -59,7 +59,7 @@ export default function SetDetailModal({ isOpen, onClose, setId, data }: SetDeta
   const mockData: LegoSet = data || {
     id: "1",
     name: "LEGO Star Wars Imperial Star Destroyer",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/game.jpg",
     setNumber: "75252",
     theme: "Star Wars",
     year: 2019,
@@ -69,7 +69,7 @@ export default function SetDetailModal({ isOpen, onClose, setId, data }: SetDeta
       {
         id: "p1",
         name: "Plate 1x2",
-        image: "/placeholder.svg?height=50&width=50",
+        image: "/game.jpg",
         color: "Light Bluish Gray",
         quantity: 24,
         owned: true,
@@ -77,7 +77,7 @@ export default function SetDetailModal({ isOpen, onClose, setId, data }: SetDeta
       {
         id: "p2",
         name: "Brick 2x4",
-        image: "/placeholder.svg?height=50&width=50",
+        image: "/game.jpg",
         color: "Dark Bluish Gray",
         quantity: 36,
         owned: true,
@@ -85,7 +85,7 @@ export default function SetDetailModal({ isOpen, onClose, setId, data }: SetDeta
       {
         id: "p3",
         name: "Slope 45° 2x1",
-        image: "/placeholder.svg?height=50&width=50",
+        image: "/game.jpg",
         color: "White",
         quantity: 18,
         owned: false,
@@ -93,7 +93,7 @@ export default function SetDetailModal({ isOpen, onClose, setId, data }: SetDeta
       {
         id: "p4",
         name: "Technic Pin",
-        image: "/placeholder.svg?height=50&width=50",
+        image: "/game.jpg",
         color: "Black",
         quantity: 42,
         owned: true,
@@ -101,7 +101,7 @@ export default function SetDetailModal({ isOpen, onClose, setId, data }: SetDeta
       {
         id: "p5",
         name: "Tile 1x2",
-        image: "/placeholder.svg?height=50&width=50",
+        image: "/game.jpg",
         color: "Light Bluish Gray",
         quantity: 30,
         owned: false,
