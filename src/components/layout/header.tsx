@@ -66,9 +66,16 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/my-sets" className="flex items-center">
-          <div className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-[120px] md:w-[120px]">
-              <Image src="/logo.webp" alt="Bricker" fill className="object-contain" priority />
-            </div>
+          <div className="relative h-[60px] w-auto">
+  <Image
+    src="/logo.webp"
+    alt="Bricker"
+    height={60}
+    width={0} // width will auto-adjust based on image ratio
+    className="object-contain"
+    priority
+  />
+</div>
           </Link>
 
           {/* Desktop Navigation */}

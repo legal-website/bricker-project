@@ -75,7 +75,7 @@ export default function ForgotPasswordForm() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="relative w-full h-full">
-            <Image src="/login.jpg" alt="Forgot Password Illustration" fill className="object-cover" priority />
+            <Image src="/login.png" alt="Forgot Password Illustration" fill className="object-cover" priority />
           </div>
         </motion.div>
 
