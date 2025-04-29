@@ -86,7 +86,7 @@ export default function LoginForm() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="relative w-[500px] h-[500px] mx-auto my-auto">
-  <Image src="/login.png" alt="Login Illustration" fill className="object-contain" priority />
+  <Image src="/loginform.png" alt="Login Illustration" fill className="object-contain" priority />
 </div>
         </motion.div>
 
