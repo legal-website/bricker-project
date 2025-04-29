@@ -44,9 +44,14 @@ export default function RegisterForm() {
         <div className="max-w-md mx-auto">
           {/* Logo */}
           <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-            <div className="relative h-[70px] w-auto">
-              <Image src="/logo.webp" alt="Bricker" fill className="object-contain" priority />
-            </div>
+            <Image
+              src="/logo.webp"
+              alt="Bricker"
+              height={60}
+              width={0}
+              style={{ height: "60px", width: "auto" }}
+              priority
+            />
           </motion.div>
 
           <motion.h2

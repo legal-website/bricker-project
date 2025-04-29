@@ -66,9 +66,14 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/my-sets" className="flex items-center">
-          <div className="relative h-20 w-auto sm:h-22 sm:w-auto md:h-[80px] md:w-auto">
-              <Image src="/logo.webp" alt="Bricker" fill className="object-cover" priority />
-            </div>
+          <Image
+            src="/logo.webp"
+            alt="Bricker"
+            height={60}
+            width={0}
+            style={{ height: "60px", width: "auto" }}
+            priority
+          />
           </Link>
 
           {/* Desktop Navigation */}

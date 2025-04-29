@@ -144,9 +144,9 @@ export default function LoginForm() {
           <Image
   src="/logo.webp"
   alt="Bricker"
-  height={70}
+  height={60}
   width={0}
-  style={{ height: "70px", width: "auto" }}
+  style={{ height: "60px", width: "auto" }}
   priority
 />
           </motion.div>
