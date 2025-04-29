@@ -69,9 +69,9 @@ export default function Header() {
           <Image
             src="/logo.webp"
             alt="Bricker"
-            height={60}
+            height={50}
             width={0}
-            style={{ height: "60px", width: "auto" }}
+            style={{ height: "50px", width: "auto" }}
             priority
           />
           </Link>

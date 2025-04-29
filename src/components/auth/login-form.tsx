@@ -141,14 +141,16 @@ export default function LoginForm() {
         <div className="max-w-md mx-auto">
           {/* Logo */}
           <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-          <Image
-  src="/logo.webp"
-  alt="Bricker"
-  height={60}
-  width={0}
-  style={{ height: "60px", width: "auto" }}
-  priority
-/>
+          <div className="flex justify-start">
+  <Image
+    src="/logo.webp"
+    alt="Bricker"
+    height={50}
+    width={0}
+    style={{ height: "50px", width: "auto" }}
+    priority
+  />
+</div>
           </motion.div>
 
           {/* User avatar */}
