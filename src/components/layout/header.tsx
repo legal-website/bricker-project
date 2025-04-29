@@ -62,7 +62,7 @@ export default function Header() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/my-sets" className="flex items-center">
