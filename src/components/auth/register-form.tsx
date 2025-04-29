@@ -233,8 +233,8 @@ export default function RegisterForm() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative w-[500px] h-[500px] mx-auto my-auto">
-  <Image src="/register.png" alt="Register Illustration" fill className="object-contain" priority />
+          <div className="relative w-[780px] h-[600px] mx-auto my-auto">
+  <Image src="/registerform.png" alt="Register Illustration" fill className="object-contain" priority />
 </div>
         </motion.div>
 
