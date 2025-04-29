@@ -85,9 +85,9 @@ export default function LoginForm() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative w-full h-full">
-            <Image src="/login.png" alt="Login Illustration" fill className="object-cover" priority />
-          </div>
+          <div className="relative w-[500px] h-[500px] mx-auto my-auto">
+  <Image src="/login.png" alt="Login Illustration" fill className="object-contain" priority />
+</div>
         </motion.div>
 
         {/* Floating particles */}

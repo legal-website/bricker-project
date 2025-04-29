@@ -233,9 +233,9 @@ export default function RegisterForm() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative w-full h-full">
-            <Image src="/register.png" alt="Register Illustration" fill className="object-cover" priority />
-          </div>
+          <div className="relative w-[500px] h-[500px] mx-auto my-auto">
+  <Image src="/register.png" alt="Register Illustration" fill className="object-contain" priority />
+</div>
         </motion.div>
 
         {/* Floating particles */}
