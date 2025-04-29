@@ -74,7 +74,7 @@ export default function ForgotPasswordForm() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative w-[480px] h-[420px] mx-auto my-auto">
+          <div className="relative w-[480px] h-[390px] mx-auto my-auto">
             <Image src="/forget.png" alt="Forgot Password Illustration" fill className="object-cover" priority />
           </div>
         </motion.div>
@@ -130,7 +130,7 @@ export default function ForgotPasswordForm() {
         <div className="max-w-md mx-auto">
           {/* Logo */}
           <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-            <div className="relative h-22 w-22">
+            <div className="relative h-[70px] w-auto">
               <Image src="/logo.webp" alt="Bricker" fill className="object-contain" priority />
             </div>
           </motion.div>

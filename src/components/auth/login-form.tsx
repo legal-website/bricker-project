@@ -141,7 +141,7 @@ export default function LoginForm() {
         <div className="max-w-md mx-auto">
           {/* Logo */}
           <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-            <div className="relative h-22 w-22">
+            <div className="relative h-[70px] w-auto">
               <Image src="/logo.webp" alt="Bricker" fill className="object-contain" priority />
             </div>
           </motion.div>

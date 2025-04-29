@@ -44,7 +44,7 @@ export default function RegisterForm() {
         <div className="max-w-md mx-auto">
           {/* Logo */}
           <motion.div className="flex justify-center mb-8" variants={itemVariants}>
-            <div className="relative h-22 w-22">
+            <div className="relative h-[70px] w-auto">
               <Image src="/logo.webp" alt="Bricker" fill className="object-contain" priority />
             </div>
           </motion.div>
@@ -233,7 +233,7 @@ export default function RegisterForm() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative w-[580px] h-[480px] mx-auto my-auto">
+          <div className="relative w-[560px] h-[450px] mx-auto my-auto">
   <Image src="/registerform.png" alt="Register Illustration" fill className="object-contain" priority />
 </div>
         </motion.div>
