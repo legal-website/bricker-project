@@ -12,7 +12,7 @@ export default function EnhancedLoading({ message = "Loading your LEGO sets..." 
 
   return (
     <motion.div
-      className="flex flex-col items-center justify-center min-h-[60vh] p-8"
+      className="flex flex-col items-center justify-center p-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}

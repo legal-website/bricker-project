@@ -88,9 +88,11 @@ export default function MySetsPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 flex flex-col">
         <Header />
-        <EnhancedLoading />
+        <div className="flex-1 flex items-center justify-center">
+          <EnhancedLoading />
+        </div>
       </div>
     )
   }
