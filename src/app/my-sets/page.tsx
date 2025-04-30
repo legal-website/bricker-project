@@ -1,15 +1,17 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Package, Plus } from "lucide-react"
 import Header from "@/components/layout/header"
 import SetCard from "@/components/lego/set-card"
 import SetDetailModal from "@/components/lego/set-detail-modal"
 import EmptyState from "@/components/ui/empty-state"
+import AddSetDialog from "@/components/lego/add-set-dialog"
+import EnhancedLoading from "@/components/ui/enhanced-loading"
 
 // Mock data for preview
-const mockSets = [
+const initialMockSets = [
   {
     id: "1",
     name: "LEGO Star Wars Imperial Star Destroyer",
@@ -45,9 +47,21 @@ const mockSets = [
 ]
 
 export default function MySetsPage() {
-  const [sets, setSets] = useState(mockSets)
+  const [isLoading, setIsLoading] = useState(true)
+  const [sets, setSets] = useState<typeof initialMockSets>([])
   const [selectedSetId, setSelectedSetId] = useState<string | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
+
+  // Simulate loading data
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSets(initialMockSets)
+      setIsLoading(false)
+    }, 2000)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleRemoveSet = (id: string) => {
     setSets((prevSets) => prevSets.filter((set) => set.id !== id))
@@ -58,6 +72,10 @@ export default function MySetsPage() {
     setIsModalOpen(true)
   }
 
+  const handleAddSet = (newSet: any) => {
+    setSets((prevSets) => [newSet, ...prevSets])
+  }
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -66,6 +84,15 @@ export default function MySetsPage() {
         staggerChildren: 0.1,
       },
     },
+  }
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <Header />
+        <EnhancedLoading />
+      </div>
+    )
   }
 
   return (
@@ -90,13 +117,14 @@ export default function MySetsPage() {
           </div>
 
           <motion.button
-  className="mt-4 md:mt-0 flex items-center justify-center py-2 px-4 bg-emerald-500 text-white rounded-[5px]"
-  whileHover={{ scale: 1.02, backgroundColor: "#10b981" }}
-  whileTap={{ scale: 0.98 }}
->
-  <Plus size={18} className="mr-2" />
-  Add New Set
-</motion.button>
+            className="mt-4 md:mt-0 flex items-center justify-center py-2 px-4 bg-emerald-500 text-white rounded-[5px]"
+            whileHover={{ scale: 1.02, backgroundColor: "#10b981" }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => setIsAddDialogOpen(true)}
+          >
+            <Plus size={18} className="mr-2" />
+            Add New Set
+          </motion.button>
         </div>
 
         {sets.length > 0 ? (
@@ -130,21 +158,25 @@ export default function MySetsPage() {
             icon={<Package size={48} />}
             action={
               <motion.button
-  className="flex items-center justify-center py-2 px-4 bg-emerald-500 text-white rounded-[5px]"
-  whileHover={{ scale: 1.02, backgroundColor: "#10b981" }}
-  whileTap={{ scale: 0.98 }}
->
-  <Plus size={18} className="mr-2" />
-  Add Your First Set
-</motion.button>
-
+                className="flex items-center justify-center py-2 px-4 bg-emerald-500 text-white rounded-[5px]"
+                whileHover={{ scale: 1.02, backgroundColor: "#10b981" }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setIsAddDialogOpen(true)}
+              >
+                <Plus size={18} className="mr-2" />
+                Add Your First Set
+              </motion.button>
             }
             image="/placeholder.svg?height=200&width=200"
           />
         )}
       </motion.main>
 
+      {/* Set Detail Modal */}
       <SetDetailModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} setId={selectedSetId || undefined} />
+
+      {/* Add New Set Dialog */}
+      <AddSetDialog isOpen={isAddDialogOpen} onClose={() => setIsAddDialogOpen(false)} onAddSet={handleAddSet} />
     </motion.div>
   )
 }
